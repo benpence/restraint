@@ -3,7 +3,7 @@ from restraint.TimesPerUnit import TimesPerUnit
 
 class Restraint:
     @classmethod
-    def mark(self, pipe, date):
+    def mark(cls, pipe, date):
         pipe.write(date + "\n")
         
     UNIT_CONVERSION = {
@@ -14,12 +14,12 @@ class Restraint:
         }
 
     @classmethod
-    def test(self, pipe, times, units, unit_string):
+    def test(cls, pipe, times, units, unit_string):
         marks = io.PlaintextPutter.read(pipe)
         
         # TODO check unit_string
         return TimesPerUnit(
             times,
             units,
-            self.UNIT_CONVERSION[unit_string]
+            cls.UNIT_CONVERSION[unit_string]
           ).allows(marks)
