@@ -19,9 +19,9 @@ And you specify how often you would like to perform an activity in the form 'X t
     $ restraint test activity.log 3 6 weeks
     Don't do it
 
-which can be interpreted as "given my activity.log, can I perform the activity if I wish to do it no more than 4 times in the last 6 weeks?"
+which can be interpreted as "given my activity.log, can I perform the activity if I wish to do it no more than 3 times in the last 6 weeks?"
 
-You can mark today's date for performingas to the log
+When you perform the activity, you can mark it in the log for today:
 
     $ restraint mark activity.log 
 
